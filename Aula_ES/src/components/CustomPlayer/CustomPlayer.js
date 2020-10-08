@@ -24,16 +24,10 @@ class CustomPlayer {
 
     render(containerHTML) {
         try {
-            const outputContainer = document.getElementById(containerHTML);
-
-            if (!outputContainer) {
-                const outputElement = document.createElement("section");
-                outputElement.setAttribute("id", containerHTML)
-                outputElement.appendChild(this.videoElement);
-                document.body.appendChild(outputElement);
-            } else {
-                containerHTML.appendChild(this.videoElement);
-            }
+            const outputElement = document.createElement("section");
+            outputElement.setAttribute("id", containerHTML)
+            outputElement.appendChild(this.videoElement);
+            document.body.appendChild(outputElement);
         } catch (error) {
             throw (`Não foi possível renderizar o Player. Erro: ${error}`);
         }
